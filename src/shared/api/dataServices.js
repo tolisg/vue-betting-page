@@ -43,8 +43,6 @@ const parseItem = (response, code) => {
 
 const registerUser = async (user) => {
   try {
-    // const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCCLUcenhFZ3m2hbeKmR2Nf2UIYkWThbrg',
-    //   { email: user.email, password: user.password, returnSecureToken: true });
     const response = await axios.post(`${API}/auth/register`, user);
     console.log(response);
     const data = parseItem(response, 201);
